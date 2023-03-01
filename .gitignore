@@ -1,2 +1,4 @@
 ﻿.idea
-todo_list/todo_list/__pycache__
+todo_list/__pycache__
+usersapp/__pycache__
+usersapp/migrations/__pycache__
