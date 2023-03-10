@@ -1,8 +1,7 @@
 import React from 'react';
 import {
-    BrowserRouter as Router,
     Switch,
-    Route,
+    Route, BrowserRouter,
 } from "react-router-dom";
 import Footer from './components/Footer.js'
 import Navbar from './components/Menu.js'
@@ -22,7 +21,7 @@ class App extends React.Component {
         this.state = {
             navbarItems: [
                 {name: 'Users', href: '/'},
-                {name: 'Projects', href: '/projects/'},
+                {name: 'Projects', href: '/projects'},
                 {name: 'TODOs', href: '/todos'},
             ],
             users: [],
@@ -43,7 +42,7 @@ class App extends React.Component {
     componentDidMount() {
         axios.get(get_url('usersapp/'))
             .then(response => {
-                this.setState({users: response.data})
+                this.setState({users: response.data.results})
             }).catch(error => console.log(error))
 
 
@@ -61,11 +60,11 @@ class App extends React.Component {
 
     render() {
         return (
-            <Router>
+            <BrowserRouter>
                 <header>
                     <Navbar navbarItems={this.state.navbarItems}/>
                 </header>
-                <main>
+                <main role="main">
                     <div>
                         <Switch>
                             <Route exact path='/'>
@@ -84,9 +83,7 @@ class App extends React.Component {
                     </div>
                 </main>
                 <Footer/>
-            </Router>
-
-
+            </BrowserRouter>
         )
     }
 }
