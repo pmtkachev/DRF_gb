@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import {Routes, Route, BrowserRouter} from 'react-router-dom';
 import Footer from './components/Footer.js';
@@ -70,7 +71,9 @@ class App extends Component {
                     </Routes>
                 </BrowserRouter>
                 <Footer/>
-            </div>
+            </Router>
+
+
         )
     }
 }

@@ -11,16 +11,15 @@ const ProjectListItem = ({item}) => {
         <tr>
             <td>{item.id}</td>
             <td>{item.name}</td>
-            <td>{item.repository}</td>
+            <td>{item.url_rep}</td>
             <td><Link to={link_to}>Detail</Link></td>
         </tr>
     )
 }
 
 const ProjectList = ({items}) => {
-    //console.log(users)
     return (
-        <table className="table">
+        <table>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
