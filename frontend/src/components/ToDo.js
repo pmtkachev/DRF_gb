@@ -6,9 +6,9 @@ const ToDoListItem = ({item}) => {
         <tr>
             <td>{item.id}</td>
             <td>{item.text}</td>
-            <td>{item.create}</td>
+            <td>{item.date}</td>
             <td>{item.project}</td>
-            <td>{item.creator}</td>
+            <td>{item.user}</td>
         </tr>
     )
 }
@@ -20,7 +20,7 @@ const ToDoList = ({items}) => {
             <tr>
                 <th>Id</th>
                 <th>Text</th>
-                <th>Create</th>
+                <th>Date</th>
                 <th>Project</th>
                 <th>Creator</th>
             </tr>
